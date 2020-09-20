@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleMapsReact, { fitBounds } from 'google-map-react';
 import { MAP_API_KEY } from 'config';
+import { getLocation } from 'services/geolocation.service';
 
 import MapBlock from 'components/MapBlock';
 
@@ -24,23 +25,26 @@ const fit = fitBounds(
 		height:size.height
 	}
 )
-console.log(fit)
+
+
+getLocation()
 
 const Map = () => {
+	
+	const [location, setLocation] = useState({lat:0,lng:0})
 
 	return (
 		<div style={styles.container}>
 
 			<GoogleMapsReact
-				defaultCenter={fit.center}
-				defaultZoom={fit.zoom}
+				defaultCenter={location}
+				defaultZoom={20}
 				yesIWantToUseGoogleMapApiInternals
 				bootstrapURLKeys={{
 					key:MAP_API_KEY,
 					language: 'ja'
 				}}
 				onGoogleApiLoaded={({map,maps}) => {
-					console.log(map,maps)
 					map.mapTypeId = 'hybrid'
 				}}
 			>
