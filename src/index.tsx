@@ -7,9 +7,9 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { locationReducer } from 'reducers/location.reducer';
+import { rootReducer } from 'reducers/root.reducer';
 
-const store = createStore(locationReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>

@@ -15,7 +15,6 @@ export const locationReducer = (
         switch(action.type) {
             case LocationActionTypes.GET_LOCATION:
                 return state;
-                
 
             default:
                 return state;

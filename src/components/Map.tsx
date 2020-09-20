@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import GoogleMapsReact, { fitBounds } from 'google-map-react';
 import { MAP_API_KEY } from 'config';
 import { getLocation } from 'services/geolocation.service';
+
+import { RootState } from 'reducers/root.reducer';
 
 import MapBlock from 'components/MapBlock';
 
@@ -31,7 +34,7 @@ getLocation()
 
 const Map = () => {
 	
-	const [location, setLocation] = useState({lat:0,lng:0})
+	const location = useSelector((state: RootState) => state.location.location)
 
 	return (
 		<div style={styles.container}>
@@ -60,10 +63,10 @@ const Map = () => {
 } 
 
 const styles = {
-    container: {
-        height: `${size.height}px`,
-        width: `${size.width}px`        
-    }
+	container: {
+		height: `${size.height}px`,
+		width: `${size.width}px`        
+	}
 }
 
 export default Map;
