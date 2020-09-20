@@ -8,7 +8,8 @@
         }
 
         #circleDraw {
-            position: absolute;
+            position: fixed;
+            border-radius: 50%;
             top: 800px;
             bottom: 0;
             left: 0;
@@ -16,13 +17,13 @@
             width: 76px;
             height: 76px;
             margin: auto;
-            border-radius: 50%;
             background: #F8F8F8;
-            box-shadow: 0px 0px 0px 4px #000000;
-            animation-name: flyInBot;
-            animation-duration: 1s;
-            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-            
+            shape-outside: circle();
+            /*box-shadow: 0px 0px 0px 4px #000000;
+            animation-name: scaleDown;
+            animation-duration: 2s;
+            transition-timing-function: cubic-bezier(.95,.03,.98,.97);
+            */
         }
 
         #roundedRect {
@@ -39,7 +40,8 @@
             border-radius: 18px;
             animation-name: flyInTop;
             animation-duration: 1s;
-            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            transition-timing-function: cubic-bezier(.02,.97,.06,.97)
+            ;
         }
 
         @keyframes flyInTop {
@@ -58,5 +60,14 @@
 
             to {
                 top: 800px;
+            }
+        }
+        @keyframes scaleDown{
+            from {width: 7600px;
+                height: 7600px;
+            }
+            to {
+                width: 76px;
+                height: 76px;
             }
         }
