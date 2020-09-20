@@ -1,10 +1,12 @@
+import googleMapReact from "google-map-react";
+
 export enum LocationActionTypes {
-    GET_LOCATION
+    UPDATE_LOCATION
 }
 
-interface GetLocationAction {
+interface UpdateLocationAction {
     type: LocationActionTypes,
-    payload: null
+    newLocation: googleMapReact.Coords
 }
 
-export type LocationAction = GetLocationAction;
+export type LocationAction = UpdateLocationAction;

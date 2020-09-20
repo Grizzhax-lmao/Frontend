@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { LocationActionTypes } from 'types/action.types';
 
+import { getLocation } from 'services/geolocation.service';
+
 import Map from 'components/Map';
 
 const Home = () => {
@@ -12,7 +14,11 @@ const Home = () => {
     <div>
 
       <Map/>
-      <button onClick={() => dispatch({type: LocationActionTypes.GET_LOCATION})}>Find my location</button>
+      <button onClick={async () => {
+        const newLocation = await getLocation();
+        dispatch({type: LocationActionTypes.UPDATE_LOCATION,newLocation})
+      }}
+      >Find my location</button>
 
     </div>
   );

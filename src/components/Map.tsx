@@ -12,22 +12,22 @@ const size = {
 	width: 900,
 	height: 600
 }
-const fit = fitBounds(
-	{
-		ne: {
-			lat:43.472200,
-			lng:-80.551835
-		},
-		sw: {
-			lat:43.470534,
-			lng:-80.553251
-		}
-	},
-	{
-		width:size.width,
-		height:size.height
-	}
-)
+// const fit = fitBounds(
+// 	{
+// 		ne: {
+// 			lat:43.472200,
+// 			lng:-80.551835
+// 		},
+// 		sw: {
+// 			lat:43.470534,
+// 			lng:-80.553251
+// 		}
+// 	},
+// 	{
+// 		width:size.width,
+// 		height:size.height
+// 	}
+// )
 
 
 getLocation()
@@ -40,7 +40,8 @@ const Map = () => {
 		<div style={styles.container}>
 
 			<GoogleMapsReact
-				defaultCenter={location}
+				defaultCenter={{lat: 0, lng: 0}}
+				center={location}
 				defaultZoom={20}
 				yesIWantToUseGoogleMapApiInternals
 				bootstrapURLKeys={{
@@ -48,7 +49,7 @@ const Map = () => {
 					language: 'ja'
 				}}
 				onGoogleApiLoaded={({map,maps}) => {
-					map.mapTypeId = 'hybrid'
+					map.mapTypeId = 'hybrid';
 				}}
 			>
 				

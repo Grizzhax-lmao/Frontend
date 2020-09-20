@@ -12,5 +12,5 @@ export const getLocation = () => {
       console.log(position)
       return {lat: position.coords.latitude, lng: position.coords.longitude}
     })
-    .catch((err)=>{console.log(err); return err})
+    .catch((err)=>{console.log(err); return {lat: 0, lng: 0}})
 }
