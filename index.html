@@ -14,6 +14,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="map"></div>
     <div id="roundedRect"></div>
@@ -27,8 +28,11 @@
         var map, infoWindow;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 6
+                center: {
+                    lat: -34.397, lng: 150.644,
+                },
+                zoom: 6,
+                disableDefaultUI: true
             });
             infoWindow = new google.maps.InfoWindow;
 
