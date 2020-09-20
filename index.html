@@ -14,15 +14,28 @@
             height: 100%;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 </head>
 
 <body>
 
-    <div id="map"></div>
+    <div id="map">
 
-    <div id="roundedRect"></div>
+    </div>
+
+    <div id="roundedRect">
+        <div id="picker" class="center">
+            
+        </div>
+    </div>
+    
     <div id="circleDraw"> </div>
     <script>
+         var colorPicker = new iro.ColorPicker('#picker', {
+                    width: 140,
+                    // Set the initial color to pure red
+                    color: "#f00"
+         });
         anime({
             targets: '#circleDraw',
             scale: ['40', '1.3'],

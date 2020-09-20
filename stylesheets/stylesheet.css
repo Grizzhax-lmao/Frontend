@@ -19,6 +19,7 @@
             margin: auto;
             background: #F8F8F8;
             shape-outside: circle();
+            box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.17);
             /*box-shadow: 0px 0px 0px 4px #000000;
             animation-name: scaleDown;
             animation-duration: 2s;
@@ -42,6 +43,14 @@
             animation-duration: 1s;
             transition-timing-function: cubic-bezier(.02,.97,.06,.97)
             ;
+        }
+        .center {
+            position: relative;
+            top: 100;
+            bottom: 100;
+            left: 100;
+            right: 100;
+            margin: auto;
         }
 
         @keyframes flyInTop {
