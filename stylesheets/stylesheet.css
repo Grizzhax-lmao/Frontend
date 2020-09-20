@@ -1,0 +1,61 @@
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #circleDraw {
+            position: absolute;
+            top: 800px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 76px;
+            height: 76px;
+            margin: auto;
+            border-radius: 50%;
+            background: #F8F8F8;
+            box-shadow: 0px 0px 0px 4px #000000;
+            animation-name: flyInBot;
+            animation-duration: 1s;
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            
+        }
+
+        #roundedRect {
+            position: fixed;
+            top: 0;
+            bottom: 700px;
+            left: 0;
+            right: 0;
+            width: 411px;
+            height: 225px;
+            margin: auto;
+            background: #FFFFFF;
+            border-radius: 18px;
+            animation-name: flyInTop;
+            animation-duration: 1s;
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        @keyframes flyInTop {
+            from {
+                bottom: 1300px;
+            }
+
+            to {
+                bottom: 700px;
+            }
+        }
+        @keyframes flyInBot {
+            from {
+                top: 1300px;
+            }
+
+            to {
+                top: 800px;
+            }
+        }
